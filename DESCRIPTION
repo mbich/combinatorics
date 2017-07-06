@@ -1,0 +1,32 @@
+Package: combinatorics
+Type: Package
+Title: An implementation algorithm of discrete optimization
+Version: 0.1.0
+Authors@R: person("Mikhail", "Bich", role=c("aut", "cre"), email = "a318@yandex.ru")
+Maintainer: Mikhail Bich <a318@yandex.ru>
+Description: The solution of combinatorial problems by the dynamic programming
+   algorithm for solving Boolean problems. The algorithm provides the search 
+   for optimal solutions in the presence of resource constraints, logical 
+   relationships and goals.
+Depends:
+    R (>= 3.3.0),
+    rJava (>= 0.5-0),
+    methods (>= 3.3.0)
+SystemRequirements: Java (>= 1.5)
+License:  MIT + file LICENSE
+LazyData: TRUE
+Collate:
+    'combinatorics-package.r'
+    'combinatorics.model.R'
+    'combinatorics.calculate.R'
+    'combinatorics.design.add.R'
+    'combinatorics.design.remove.R'
+    'combinatorics.design.set.R'
+    'combinatorics.models.R'
+    'combinatorics.plot.R'
+    'combinatorics.print.R'
+    'onLoad.R'
+RoxygenNote: 6.0.1
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr
