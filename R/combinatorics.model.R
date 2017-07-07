@@ -1,15 +1,14 @@
 # Модель Сombinatorics
-#'Combinatorics Model
+#'Комбинаторная модель
 #'
 #'@section Slots:
 #'  \describe{
-#'    \item{\code{parameters}:}{Object of class \code{"list"}, containing data from of resources and targets}
-#'    \item{\code{arrangements}:}{Object of class \code{"list"}, containing data from of arrangements.}
-#'    \item{\code{logicconnections}:}{Object of class \code{"list"}, containing data logic network.}
-#'    \item{\code{name}:}{Object of class \code{"character"}, containing data that needs to go in name.}
+#'    \item{\code{parameters}:}{объект класса \code{"list"}, содержащий ресурсные ограничения и цели.}
+#'    \item{\code{arrangements}:}{объект класса  \code{"list"}, содержащий варианты мероприятий.}
+#'    \item{\code{logicconnections}:}{объект класса \code{"list"}, содержащий логические связи мероприятий.}
+#'    \item{\code{name}:}{объект класса \code{"character"}, содержащий наименование модели.}
 #'  }
 #'
-#' @name Combinatorics-class
 #' @rdname Combinatorics-class
 #'
 #' @exportClass Combinatorics
@@ -37,14 +36,16 @@ setClass("Combinatorics",
 )
 
 # @name initializeCombinatorics
-# @rdname Combinatorics-class
+#' @rdname Combinatorics-class
+#'
+#' @param .Object Комбинаторная модель
+#' @param ... аргументы конструктура
+#' @param data объект класса \code{"matrix"}, содержащий матрицу, где в строках
+#'    указаны мероприятия, а в столбцах ресурсные ограничение и цели.
+#' @param arrayLogicalConnections объект класса \code{"vector"}, содержащий
+#'    перечень логических связей
 #
-# @param .Object Combinatorics model
-# @param ... constructor arguments
-# @param data matrix
-# @param arrayLogicalConnections character vector
-#
-# @return Combinatorics model
+#' @return Комбинаторная модель
 setMethod("initialize", signature(.Object = "Combinatorics"),
           function(.Object, ... , data=matrix(), arrayLogicalConnections=character()){
             .Object <- callNextMethod(.Object, ...)
@@ -80,10 +81,13 @@ setMethod("initialize", signature(.Object = "Combinatorics"),
           })
 
 # Используйте combinatorics.model для создания нового объекта Combinatorics
-#' Use combinatorics.model for create new Combinatoric sobject
-#' @name Combinatorics
+#' Используйте функцию combinatorics.model для создания новой комбинаторной модель
+#' @name combinatorics.model
 #' @rdname Combinatorics-class
-#' @param ... constructor arguments
+# @param ... constructor arguments
+#'
+# @return Комбинаторная модель
+#'
 #' @examples
 #'   model <- combinatorics.model(name="Example")
 #' @export

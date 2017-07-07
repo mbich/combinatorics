@@ -1,8 +1,11 @@
 Package: combinatorics
 Type: Package
 Title: An implementation algorithm of discrete optimization
-Version: 0.1.0
-Authors@R: person("Mikhail", "Bich", role=c("aut", "cre"), email = "a318@yandex.ru")
+Version: 0.3.0
+Authors@R: c(
+    person("Mikhail", "Bich", role=c("aut", "cre"), email = "a318@yandex.ru"),
+    person("Gennady", "Ross", email = "ross-49@mail.ru", role = "ccp"),
+    person("Vladimir", "Lihtenshteyn", email = "liht2004@mail.ru", role = "ccp"))
 Maintainer: Mikhail Bich <a318@yandex.ru>
 Description: The solution of combinatorial problems by the dynamic programming
    algorithm for solving Boolean problems. The algorithm provides the search 
@@ -14,6 +17,7 @@ Depends:
     methods (>= 3.3.0)
 SystemRequirements: Java (>= 1.5)
 License: MIT + file LICENSE
+Encoding: UTF-8
 LazyData: TRUE
 Collate:
     'combinatorics-package.r'

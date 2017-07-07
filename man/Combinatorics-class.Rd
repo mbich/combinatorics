@@ -3,27 +3,41 @@
 \docType{class}
 \name{Combinatorics-class}
 \alias{Combinatorics-class}
-\alias{Combinatorics}
+\alias{initialize,Combinatorics-method}
 \alias{combinatorics.model}
-\title{Combinatorics Model}
+\title{Комбинаторная модель}
 \usage{
+\S4method{initialize}{Combinatorics}(.Object, ..., data = matrix(),
+  arrayLogicalConnections = character())
+
 combinatorics.model(...)
 }
 \arguments{
-\item{...}{constructor arguments}
+\item{.Object}{Комбинаторная модель}
+
+\item{...}{аргументы конструктура}
+
+\item{data}{объект класса \code{"matrix"}, содержащий матрицу, где в строках
+указаны мероприятия, а в столбцах ресурсные ограничение и цели.}
+
+\item{arrayLogicalConnections}{объект класса \code{"vector"}, содержащий
+перечень логических связей}
+}
+\value{
+Комбинаторная модель
 }
 \description{
-Combinatorics Model
+Комбинаторная модель
 
-Use combinatorics.model for create new Combinatoric sobject
+Используйте функцию combinatorics.model для создания новой комбинаторной модель
 }
 \section{Slots}{
 
  \describe{
-   \item{\code{parameters}:}{Object of class \code{"list"}, containing data from of resources and targets}
-   \item{\code{arrangements}:}{Object of class \code{"list"}, containing data from of arrangements.}
-   \item{\code{logicconnections}:}{Object of class \code{"list"}, containing data logic network.}
-   \item{\code{name}:}{Object of class \code{"character"}, containing data that needs to go in name.}
+   \item{\code{parameters}:}{объект класса \code{"list"}, содержащий ресурсные ограничения и цели.}
+   \item{\code{arrangements}:}{объект класса  \code{"list"}, содержащий варианты мероприятий.}
+   \item{\code{logicconnections}:}{объект класса \code{"list"}, содержащий логические связи мероприятий.}
+   \item{\code{name}:}{объект класса \code{"character"}, содержащий наименование модели.}
  }
 }
 
