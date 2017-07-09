@@ -5,12 +5,13 @@ NULL
 #' @name combinatorics.remove.arrangement
 #' @title Remove arrangement
 #' @description
-#'   Remove arrangement from model
+#'   Исключает мероприятие из комбинаторной модели
 #'
-#' @param model Combinatorics model
-#' @param arrangement arrangement
+#' @param model объект класса \code{"Combinatorics"}, содержащий комбинаторную модель
+#' @param arrangement объект класса \code{"character"} или \code{"numeric"}, содержащий
+#'   наименование мероприятия или индекс мероприятия в списке мероприятий
 #'
-#' @return Combinatroics model
+#' @return возвращает объект класса \code{"Combinatorics"} с внесёнными изменениями
 #'
 #' @seealso \code{\link{combinatorics.remove.logicconnection}},
 #' \code{\link{combinatorics.remove.parameter}}
@@ -20,9 +21,8 @@ setGeneric(name="combinatorics.remove.arrangement",
            }
 )
 
-#' @describeIn combinatorics.remove.arrangement remove arrangement by name
-# @name combinatorics.remove.arrangement
-# @note  Remove arrangement by name
+#' @describeIn combinatorics.remove.arrangement поиск мероприятия по наименованию и исключение его
+#'
 #' @examples
 #'
 #'   model <- combinatorics.example.Model3()
@@ -44,9 +44,8 @@ setMethod(f="combinatorics.remove.arrangement",
           }
 )
 
-#' @describeIn combinatorics.remove.arrangement remove by arrangement index
-# @name combinatorics.remove.arrangement
-# @note Remove by arrangement index
+#' @describeIn combinatorics.remove.arrangement поиск мероприятия по индексe в списке мероприятий
+#'   и исключение его
 #' @examples
 #'
 #'   model <- combinatorics.example.Model3()
@@ -70,19 +69,21 @@ setMethod(f="combinatorics.remove.arrangement",
 #' @name combinatorics.remove.logicconnection
 #' @title Remove logicconnection
 #' @description
-#'   Remove logicconnection from model
+#'   Исключает логическую связь из логической сети комбинаторной модели
 #'
-#' @param model Combinatorics model
-#' @param logicconnection logicconnection
+#' @param model объект класса \code{"Combinatorics"}, содержащий комбинаторную модель
+#' @param logicconnection объект класса \code{"character"} или \code{"numeric"}, содержащий
+#'   логическую формулу или формулы в логической сети
 #'
-#' @return Combinatroics model
+#' @return возвращает объект класса \code{"Combinatorics"} с внесёнными изменениями
 setGeneric(name="combinatorics.remove.logicconnection",
            def=function(model, logicconnection){
              standardGeneric("combinatorics.remove.logicconnection")
            }
 )
 
-#' @describeIn combinatorics.remove.logicconnection remove by logic value
+#' @describeIn combinatorics.remove.logicconnection исключает логическую связь по её логической
+#'   формуле
 #' @examples
 #'
 #'   model <- combinatorics.example.Model3()
@@ -104,7 +105,8 @@ setMethod(f="combinatorics.remove.logicconnection",
           }
 )
 
-#' @describeIn combinatorics.remove.logicconnection remove by index
+#' @describeIn combinatorics.remove.logicconnection исключает логическую связь по индексу её логической
+#'   формулы в логической сети (в списке логических связей)
 #' @examples
 #'
 #'   model <- combinatorics.example.Model3()
@@ -129,18 +131,21 @@ setMethod(f="combinatorics.remove.logicconnection",
 #' @name combinatorics.remove.parameter
 #' @title Remove parameter
 #' @description
-#'   Remove parameter from model
-#' @param model Combinatorics model
-#' @param parameter parameter
+#'   Исключает показатель в мероприятиях из комбинаторной модели. При исключении показатель
+#'   исключается из каждого мероприятия.
 #'
-#' @return Combinatroics model
+#' @param model объект класса \code{"Combinatorics"}, содержащий комбинаторную модель
+#' @param parameter объект класса \code{"character"} или \code{"numeric"}, содержащий
+#'   наименование показателя или номер показателя в списке показателей комбинаторной модели
+#'
+#' @return возвращает объект класса \code{"Combinatorics"} с внесёнными изменениями
 setGeneric(name="combinatorics.remove.parameter",
            def=function(model, parameter){
              standardGeneric("combinatorics.remove.parameter")
            }
 )
 
-#' @describeIn combinatorics.remove.parameter remove by name
+#' @describeIn combinatorics.remove.parameter исключает показатель по его наименованию
 #' @examples
 #'
 #'   model <- combinatorics.example.Model3()
@@ -169,7 +174,8 @@ setMethod(f="combinatorics.remove.parameter",
           }
 )
 
-#' @describeIn combinatorics.remove.parameter remove by index
+#' @describeIn combinatorics.remove.parameter исключает показатель по индексу в списке
+#'   показателей комбинаторной модели
 #' @examples
 #'
 #'   model <- combinatorics.example.Model3()

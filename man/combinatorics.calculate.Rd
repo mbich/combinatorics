@@ -2,22 +2,30 @@
 % Please edit documentation in R/combinatorics.calculate.R
 \name{combinatorics.calculate}
 \alias{combinatorics.calculate}
-\title{combinatorics.calculate}
+\title{Calculation of the combinatorics model}
 \usage{
 combinatorics.calculate(model, maximum = TRUE, ...)
 }
 \arguments{
-\item{model}{Combinatorics model}
+\item{model}{объект класса \code{"Combinatorics"}, содержащий комбинаторную модель задачи}
 
-\item{maximum}{boolean}
+\item{maximum}{объект класса \code{"boolean"}, содержащий флаг указания расчёта на максими или
+минимум.}
 
-\item{...}{other arguments}
+\item{...}{дополнительные аргументы, передаваемые другим методам или получаемые от них.}
 }
 \value{
-object
+объект, содержаший результаты расчёта комбинаторной модели на максимум
+ или минимум
 }
 \description{
-combinatorics.calculate
+Расчёт комбинаторной модели на максимум, т.е. максимизируется значение целевого показателя - «притока»
+или на минимум, т.е. предел допустимого совокупного «притока». Смысл расчёта на миниму в том, что
+Установив заранее желаемую цель, можной найти те минимально необходимые затраты, которые
+обеспечат достижение этой цели.
+
+Для выполнения расчёта должны быть указаные значения пределов ограниченных ресурсов и выбран
+целевой показатель.
 }
 \examples{
   combinatorics.calculate(combinatorics.example.Model1())

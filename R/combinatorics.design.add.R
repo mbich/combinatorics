@@ -5,13 +5,15 @@ NULL
 #
 #' Method add arrangement
 #' @description
-#'   Add arrangement in model.
+#'   Добавляет мероприятие в комбинаторную модель.
 #'
-#' @param model Combinatorics model
-#' @param name name model
-#' @param values numeric vector
+#' @param model объект класса \code{"Combinatorics"}, содержащий комбинаторную модель
+#' @param name объект класса \code{"character"}, содержащий наименование добавляемого
+#'   мероприятия
+#' @param values объект класса \code{"vector"}, содержащий содержащий числовые значения показателей. Количество
+#'   количество значений в векторе должно быть равно колчеству показателей в комбинаторной модели
 #'
-#' @return Combinatroics model
+#' @return возвращает объект класса \code{"Combinatorics"} с внесёнными изменениями
 #'
 #' @name combinatorics.add.arrangement
 #' @rdname combinatorics.add.arrangement
@@ -49,12 +51,13 @@ setMethod(f="combinatorics.add.arrangement",
 ##Модификация модели. Добавления новой логической связи
 #' Method add logicconnection in model.
 #' @description
-#'   Add logicconnection in model.
+#'   Добавляет логическую связь в логическую сеть комбинаторной модели.
 #'
-#' @param model Combinatorics model
-#' @param logicconnection logicconnection value
+#' @param model объект класса \code{"Combinatorics"}, содержащий комбинаторную модель
+#' @param logicconnection объект класса \code{"character"}, содержащий логическую формулу,
+#'   которой представленна логическая связь
 #'
-#' @return Combinatroics model
+#' @return возвращает объект класса \code{"Combinatorics"} с внесёнными изменениями
 #'
 #' @name combinatorics.add.logicconnection
 #' @rdname combinatorics.add.logicconnection
@@ -89,15 +92,20 @@ setMethod(f="combinatorics.add.logicconnection",
 #' @name combinatorics.add.parameter
 #' @title Add parameter in model
 #' @description
-#'   Add parameter in model.
+#'   Добавляет показатель в комбинаторную модель. При указании значения в парамете \code{"value"}
+#'   показатель используется  в качестве как ограниченного ресурса
 #'
-#' @param model Combinatorics model
-#' @param name parameter name
-#' @param dimension parameter dimension
-#' @param value parameter value
-#' @param arrangementValues numeric vector value all arrangements
+#' @param model объект класса \code{"Combinatorics"}, содержащий комбинаторную модель
+#' @param name объект класса \code{"character"}, содержащий наименование добавляемого
+#'   показателя
+#' @param dimension объект класса \code{"character"}, содержащий размернойть добавляемого
+#'   показателя
+#' @param value объект класса \code{"numeric"}, содержащий значение огранченного ресурса.
+#' @param arrangementValues объект класса \code{"vector"}, содержащий числовые значения показателя для.
+#'  всех мероприятий в комбинаторной модели. Количество значений в векторе должно быть равно количеству
+#'  мероприятий в комбинаторной модели
 #'
-#' @return Combintroicsmodel
+#' @return возвращает объект класса \code{"Combinatorics"} с внесёнными изменениями
 #'
 #' @exportMethod combinatorics.add.parameter
 setGeneric(name="combinatorics.add.parameter",
@@ -107,7 +115,8 @@ setGeneric(name="combinatorics.add.parameter",
 )
 
 # Так как задан лимит, то очевидно ограниченный ресурс
-#' @describeIn combinatorics.add.parameter add limit parameter in empty model
+#' @describeIn combinatorics.add.parameter добавление ограниченного ресурса в комбинаторную модель
+#'   не содержащей мероприятий
 #' @examples
 #'
 #'   model <- combinatorics.model()
@@ -130,7 +139,8 @@ setMethod(f="combinatorics.add.parameter",
 )
 
 # Так как задан лимит, то очевидно ограниченный ресурс
-#' @describeIn combinatorics.add.parameter add limit parameter in empty model
+#' @describeIn combinatorics.add.parameter добавление ограниченного ресурса без указания его размерности
+#'   в комбинаторную модель не содержащей мероприятий
 #' @examples
 #'
 #'   model <- combinatorics.model()
@@ -152,7 +162,8 @@ setMethod(f="combinatorics.add.parameter",
           }
 )
 
-#' @describeIn combinatorics.add.parameter add parameter in empty model
+#' @describeIn combinatorics.add.parameter добавление показателя в комбинаторную модель не
+#'  содержащей мероприятий
 #' @examples
 #'
 #'   model <- combinatorics.model()
@@ -171,7 +182,8 @@ setMethod(f="combinatorics.add.parameter",
           }
 )
 
-#' @describeIn combinatorics.add.parameter add parameter in empty model
+#' @describeIn combinatorics.add.parameter добавление показателя без указания его размерности
+#'   в комбинаторную модель не содержащей мероприятий
 #' @examples
 #'
 #'   model <- combinatorics.model()
@@ -191,7 +203,7 @@ setMethod(f="combinatorics.add.parameter",
 )
 
 # Так как задан лимит, то очевидно ограниченный ресурс
-#' @describeIn combinatorics.add.parameter add limit parameter in model
+#' @describeIn combinatorics.add.parameter добавление ограниченного ресурса в комбинаторную модель
 #' @examples
 #'
 #'   model <- combinatorics.example.Model2()
@@ -222,7 +234,7 @@ setMethod(f="combinatorics.add.parameter",
 )
 
 # Так как задан лимит, то очевидно ограниченный ресурс
-#' @describeIn combinatorics.add.parameter add parameter in model
+#' @describeIn combinatorics.add.parameter добавление показателя в комбинаторную модель
 #' @examples
 #'
 #'   model <- combinatorics.example.Model2()
@@ -250,7 +262,8 @@ setMethod(f="combinatorics.add.parameter",
 
 
 # Так как задан лимит, то очевидно ограниченный ресурс
-#' @describeIn combinatorics.add.parameter add limit parameter in model
+#' @describeIn combinatorics.add.parameter добавление ограниченного ресурса без указания его размерности
+#'   в комбинаторную модель
 #' @examples
 #'
 #'   model <- combinatorics.example.Model2()

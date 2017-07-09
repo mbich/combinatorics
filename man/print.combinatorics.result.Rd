@@ -2,25 +2,35 @@
 % Please edit documentation in R/combinatorics.print.R
 \name{print.combinatorics.result}
 \alias{print.combinatorics.result}
-\title{print}
+\title{Print the result of calculating the combinatorics model}
 \usage{
 \method{print}{combinatorics.result}(x, nameArrangment = FALSE,
   digits = max(3L, getOption("digits") - 3L), ...)
 }
 \arguments{
-\item{x}{Combinatorics model}
+\item{x}{объект, содержаший результаты расчёта комбинаторной модели на максимум
+или минимум}
 
-\item{nameArrangment}{boolean}
+\item{nameArrangment}{объект класса \code{"boolean"}, содержащий флаг отображения
+состава мероприятие в виде их номеров (для значения флага FALSE) или наименование
+для  (для значения флага TRUE)}
 
-\item{digits}{integer value}
+\item{digits}{объект класса \code{"integer"}, содержащий минимальное количество значащих
+цифр, см. \code{\link{print.default}}}
 
-\item{...}{other arguments}
+\item{...}{дополнительные аргументы, передаваемые другим методам или получаемые от них.}
 }
 \description{
-print
+Печать результата расчёта комбинаторной модели на максимум или миимум. При печати
+выводятся значения ограниченных ресуросов и цели, их отношение и оптимальная выборка
+мероприятия, обеспечивающих соответствующие значения ограниченных ресуросов и цели.
 }
 \examples{
   out <- combinatorics.calculate(combinatorics.example.Model1())
   print(out)
   print(out, nameArrangment = TRUE)
+
+}
+\seealso{
+\code{\link{combinatorics.calculate}}
 }

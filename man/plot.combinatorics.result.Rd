@@ -2,26 +2,30 @@
 % Please edit documentation in R/combinatorics.plot.R
 \name{plot.combinatorics.result}
 \alias{plot.combinatorics.result}
-\title{plot}
+\title{Generic X-Y Plotting the result of calculating the combinatorics model}
 \usage{
-\method{plot}{combinatorics.result}(x, limit = 1, TargetDivLimit = FALSE,
-  ...)
+\method{plot}{combinatorics.result}(x, TargetDivLimit = FALSE, ...)
 }
 \arguments{
-\item{x}{Combinatorics model}
+\item{x}{объект, содержаший результаты расчёта комбинаторной модели на максимум
+или минимум}
 
-\item{limit}{index}
+\item{TargetDivLimit}{объект класса \code{"boolean"}, содержащий флаг использования
+в значении оси y отношение целевого показателя к ограниченному ресурсу (ЦП/ОР)}
 
-\item{TargetDivLimit}{y axis}
-
-\item{...}{other arguments}
+\item{...}{дополнительные аргументы, передаваемые другим методам или получаемые от
+них, см. аргумент ... функции \code{\link{plot}}}
 }
 \description{
-plot
+Отображение графика зависимости целевого показателя или отношения "целевого показателя к
+ограниченному ресурсу" от ограниченного ресурса.
 }
 \examples{
   out <- combinatorics.calculate(combinatorics.example.Model1())
   plot(out, type="o")
   plot(out, type="o", TargetDivLimit=TRUE)
 
+}
+\seealso{
+\code{\link{combinatorics.calculate}}
 }

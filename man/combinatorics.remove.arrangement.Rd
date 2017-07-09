@@ -16,21 +16,23 @@ combinatorics.remove.arrangement(model, arrangement)
   arrangement)
 }
 \arguments{
-\item{model}{Combinatorics model}
+\item{model}{объект класса \code{"Combinatorics"}, содержащий комбинаторную модель}
 
-\item{arrangement}{arrangement}
+\item{arrangement}{объект класса \code{"character"} или \code{"numeric"}, содержащий
+наименование мероприятия или индекс мероприятия в списке мероприятий}
 }
 \value{
-Combinatroics model
+возвращает объект класса \code{"Combinatorics"} с внесёнными изменениями
 }
 \description{
-Remove arrangement from model
+Исключает мероприятие из комбинаторной модели
 }
 \section{Methods (by class)}{
 \itemize{
-\item \code{model = Combinatorics,arrangement = character}: remove arrangement by name
+\item \code{model = Combinatorics,arrangement = character}: поиск мероприятия по наименованию и исключение его
 
-\item \code{model = Combinatorics,arrangement = numeric}: remove by arrangement index
+\item \code{model = Combinatorics,arrangement = numeric}: поиск мероприятия по индексe в списке мероприятий
+и исключение его
 }}
 
 \examples{

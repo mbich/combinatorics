@@ -12,17 +12,19 @@ combinatorics.add.arrangement(model, name, values)
   name, values)
 }
 \arguments{
-\item{model}{Combinatorics model}
+\item{model}{объект класса \code{"Combinatorics"}, содержащий комбинаторную модель}
 
-\item{name}{name model}
+\item{name}{объект класса \code{"character"}, содержащий наименование добавляемого
+мероприятия}
 
-\item{values}{numeric vector}
+\item{values}{объект класса \code{"vector"}, содержащий содержащий числовые значения показателей. Количество
+количество значений в векторе должно быть равно колчеству показателей в комбинаторной модели}
 }
 \value{
-Combinatroics model
+возвращает объект класса \code{"Combinatorics"} с внесёнными изменениями
 }
 \description{
-Add arrangement in model.
+Добавляет мероприятие в комбинаторную модель.
 }
 \examples{
 

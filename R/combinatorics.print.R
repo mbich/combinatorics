@@ -1,17 +1,29 @@
 #' @include combinatorics.model.R
 NULL
 
-#' print
+#' Print the result of calculating the combinatorics model
 #'
-#' @param x Combinatorics model
-#' @param nameArrangment boolean
-#' @param digits integer value
-#' @param ... other arguments
+#' @description
+#'
+#' Печать результата расчёта комбинаторной модели на максимум или миимум. При печати
+#' выводятся значения ограниченных ресуросов и цели, их отношение и оптимальная выборка
+#' мероприятия, обеспечивающих соответствующие значения ограниченных ресуросов и цели.
+#'
+#' @param x объект, содержаший результаты расчёта комбинаторной модели на максимум
+#'  или минимум
+#' @param nameArrangment объект класса \code{"boolean"}, содержащий флаг отображения
+#'  состава мероприятие в виде их номеров (для значения флага FALSE) или наименование
+#'  для  (для значения флага TRUE)
+#' @param digits объект класса \code{"integer"}, содержащий минимальное количество значащих
+#'  цифр, см. \code{\link{print.default}}
+#' @param ... дополнительные аргументы, передаваемые другим методам или получаемые от них.
 #'
 #' @examples
 #'   out <- combinatorics.calculate(combinatorics.example.Model1())
 #'   print(out)
 #'   print(out, nameArrangment = TRUE)
+#'
+#' @seealso \code{\link{combinatorics.calculate}}
 #' @export
 print.combinatorics.result <- function(x, nameArrangment= FALSE, digits = max(3L, getOption("digits") - 3L), ...){
   m <- as(x$model, "Combinatorics")

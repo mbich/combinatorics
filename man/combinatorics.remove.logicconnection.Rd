@@ -16,21 +16,24 @@ combinatorics.remove.logicconnection(model, logicconnection)
   logicconnection)
 }
 \arguments{
-\item{model}{Combinatorics model}
+\item{model}{объект класса \code{"Combinatorics"}, содержащий комбинаторную модель}
 
-\item{logicconnection}{logicconnection}
+\item{logicconnection}{объект класса \code{"character"} или \code{"numeric"}, содержащий
+логическую формулу или формулы в логической сети}
 }
 \value{
-Combinatroics model
+возвращает объект класса \code{"Combinatorics"} с внесёнными изменениями
 }
 \description{
-Remove logicconnection from model
+Исключает логическую связь из логической сети комбинаторной модели
 }
 \section{Methods (by class)}{
 \itemize{
-\item \code{model = Combinatorics,logicconnection = character}: remove by logic value
+\item \code{model = Combinatorics,logicconnection = character}: исключает логическую связь по её логической
+формуле
 
-\item \code{model = Combinatorics,logicconnection = numeric}: remove by index
+\item \code{model = Combinatorics,logicconnection = numeric}: исключает логическую связь по индексу её логической
+формулы в логической сети (в списке логических связей)
 }}
 
 \examples{

@@ -1,7 +1,7 @@
 Package: combinatorics
 Type: Package
 Title: An implementation algorithm of discrete optimization
-Version: 0.3.0
+Version: 0.3.1
 Authors@R: c(
     person("Mikhail", "Bich", role=c("aut", "cre"), email = "a318@yandex.ru"),
     person("Gennady", "Ross", email = "ross-49@mail.ru", role = "ccp"),
@@ -32,7 +32,8 @@ Collate:
     'onLoad.R'
 RoxygenNote: 6.0.1
 Suggests: knitr,
-    rmarkdown
+    rmarkdown,
+    testthat
 VignetteBuilder: knitr
 URL: https://github.com/mbich/combinatorics
 BugReports: https://github.com/mbich/combinatorics/issues

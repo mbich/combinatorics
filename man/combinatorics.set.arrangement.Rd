@@ -16,23 +16,27 @@ combinatorics.set.arrangement(model, arrangement, values)
   arrangement, values)
 }
 \arguments{
-\item{model}{Combinatorics model}
+\item{model}{объект класса \code{"Combinatorics"}, содержащий комбинаторную модель}
 
-\item{arrangement}{arrangement in model}
+\item{arrangement}{объект класса \code{"character"} или \code{"numeric"}, содержащий
+наименование мероприятия или индекс мероприятия в списке мероприятий}
 
-\item{values}{new arrangement values}
+\item{values}{объект класса \code{"vector"}, содержащий числовые значения показателей.
+Количество значений в векторе должно быть равно колчеству показателей в комбинаторной модели}
 }
 \value{
-Combinatroics model
+возвращает объект класса \code{"Combinatorics"} с внесёнными изменениями
 }
 \description{
-Set arrangement values
+Присваивает одному из мероприятий в комбинаторной модели значения показателей.
 }
 \section{Methods (by class)}{
 \itemize{
-\item \code{model = Combinatorics,arrangement = character,values = vector}: find arrangement by name and set new values
+\item \code{model = Combinatorics,arrangement = character,values = vector}: поиск мероприятия по наименованию и установка новых
+значений показателей.
 
-\item \code{model = Combinatorics,arrangement = numeric,values = vector}: find arrangement by index and set new values
+\item \code{model = Combinatorics,arrangement = numeric,values = vector}: поиск мероприятия по индексe в списке мероприятий
+и установка новых значений показателей.
 }}
 
 \examples{

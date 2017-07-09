@@ -43,37 +43,47 @@ combinatorics.add.parameter(model, name, dimension, value, arrangementValues)
   name, dimension, value, arrangementValues)
 }
 \arguments{
-\item{model}{Combinatorics model}
+\item{model}{объект класса \code{"Combinatorics"}, содержащий комбинаторную модель}
 
-\item{name}{parameter name}
+\item{name}{объект класса \code{"character"}, содержащий наименование добавляемого
+показателя}
 
-\item{dimension}{parameter dimension}
+\item{dimension}{объект класса \code{"character"}, содержащий размернойть добавляемого
+показателя}
 
-\item{value}{parameter value}
+\item{value}{объект класса \code{"numeric"}, содержащий значение огранченного ресурса.}
 
-\item{arrangementValues}{numeric vector value all arrangements}
+\item{arrangementValues}{объект класса \code{"vector"}, содержащий числовые значения показателя для.
+всех мероприятий в комбинаторной модели. Количество значений в векторе должно быть равно количеству
+мероприятий в комбинаторной модели}
 }
 \value{
-Combintroicsmodel
+возвращает объект класса \code{"Combinatorics"} с внесёнными изменениями
 }
 \description{
-Add parameter in model.
+Добавляет показатель в комбинаторную модель. При указании значения в парамете \code{"value"}
+  показатель используется  в качестве как ограниченного ресурса
 }
 \section{Methods (by class)}{
 \itemize{
-\item \code{model = Combinatorics,name = character,dimension = character,value = numeric,arrangementValues = missing}: add limit parameter in empty model
+\item \code{model = Combinatorics,name = character,dimension = character,value = numeric,arrangementValues = missing}: добавление ограниченного ресурса в комбинаторную модель
+не содержащей мероприятий
 
-\item \code{model = Combinatorics,name = character,dimension = missing,value = numeric,arrangementValues = missing}: add limit parameter in empty model
+\item \code{model = Combinatorics,name = character,dimension = missing,value = numeric,arrangementValues = missing}: добавление ограниченного ресурса без указания его размерности
+в комбинаторную модель не содержащей мероприятий
 
-\item \code{model = Combinatorics,name = character,dimension = character,value = missing,arrangementValues = missing}: add parameter in empty model
+\item \code{model = Combinatorics,name = character,dimension = character,value = missing,arrangementValues = missing}: добавление показателя в комбинаторную модель не
+содержащей мероприятий
 
-\item \code{model = Combinatorics,name = character,dimension = missing,value = missing,arrangementValues = missing}: add parameter in empty model
+\item \code{model = Combinatorics,name = character,dimension = missing,value = missing,arrangementValues = missing}: добавление показателя без указания его размерности
+в комбинаторную модель не содержащей мероприятий
 
-\item \code{model = Combinatorics,name = character,dimension = character,value = numeric,arrangementValues = vector}: add limit parameter in model
+\item \code{model = Combinatorics,name = character,dimension = character,value = numeric,arrangementValues = vector}: добавление ограниченного ресурса в комбинаторную модель
 
-\item \code{model = Combinatorics,name = character,dimension = character,value = missing,arrangementValues = vector}: add parameter in model
+\item \code{model = Combinatorics,name = character,dimension = character,value = missing,arrangementValues = vector}: добавление показателя в комбинаторную модель
 
-\item \code{model = Combinatorics,name = character,dimension = missing,value = numeric,arrangementValues = vector}: add limit parameter in model
+\item \code{model = Combinatorics,name = character,dimension = missing,value = numeric,arrangementValues = vector}: добавление ограниченного ресурса без указания его размерности
+в комбинаторную модель
 }}
 
 \examples{

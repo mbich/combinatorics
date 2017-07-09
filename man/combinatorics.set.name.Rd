@@ -11,18 +11,19 @@ combinatorics.set.name(model, name)
 \S4method{combinatorics.set.name}{Combinatorics,character}(model, name)
 }
 \arguments{
-\item{model}{Combinatorics model}
+\item{model}{объект класса \code{"Combinatorics"}, содержащий комбинаторную модель}
 
-\item{name}{model name}
+\item{name}{объект класса \code{"character"}, содержащий название модели}
 }
 \value{
-Combinatroics model
+возвращает объект класса \code{"Combinatorics"} с изменённым названием модели
 }
 \description{
-Set model name
+Присваивает название комбинаторной модели
 }
 \examples{
 
   model <- combinatorics.example.Model3()
-  combinatorics.set.name (model, 'Demo Name')
+  model <- combinatorics.set.name (model, 'Demo Name')
+  model@name
 }

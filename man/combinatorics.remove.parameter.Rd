@@ -16,21 +16,24 @@ combinatorics.remove.parameter(model, parameter)
   parameter)
 }
 \arguments{
-\item{model}{Combinatorics model}
+\item{model}{объект класса \code{"Combinatorics"}, содержащий комбинаторную модель}
 
-\item{parameter}{parameter}
+\item{parameter}{объект класса \code{"character"} или \code{"numeric"}, содержащий
+наименование показателя или номер показателя в списке показателей комбинаторной модели}
 }
 \value{
-Combinatroics model
+возвращает объект класса \code{"Combinatorics"} с внесёнными изменениями
 }
 \description{
-Remove parameter from model
+Исключает показатель в мероприятиях из комбинаторной модели. При исключении показатель
+  исключается из каждого мероприятия.
 }
 \section{Methods (by class)}{
 \itemize{
-\item \code{model = Combinatorics,parameter = character}: remove by name
+\item \code{model = Combinatorics,parameter = character}: исключает показатель по его наименованию
 
-\item \code{model = Combinatorics,parameter = numeric}: remove by index
+\item \code{model = Combinatorics,parameter = numeric}: исключает показатель по индексу в списке
+показателей комбинаторной модели
 }}
 
 \examples{

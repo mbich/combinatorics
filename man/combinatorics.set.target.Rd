@@ -16,23 +16,29 @@ combinatorics.set.target(model, parameter, value)
   parameter, value)
 }
 \arguments{
-\item{model}{Combinatorics model}
+\item{model}{объект класса \code{"Combinatorics"}, содержащий комбинаторную модель}
 
-\item{parameter}{parameter in model}
+\item{parameter}{объект класса \code{"character"} или \code{"numeric"}, содержащий
+наименование показателя или индекс показателя в списке}
 
-\item{value}{has parameter is targer or not}
+\item{value}{объект класса \code{"boolean"}, содержащий флаг использования показателя
+как целевого показателя. TRUE - показатель используется как целевой показатель.}
 }
 \value{
-Combinatroics model
+возвращает объект класса \code{"Combinatorics"} с внесёнными изменениями
 }
 \description{
-Set target in model
+Присваивает одному из показателей комбинаторной модели флаг использования его в качестве
+  целевого показателя или снимает снимает флаг. В комбинаторной модели при расчёте может быть
+  только один целевой показатель.
 }
 \section{Methods (by class)}{
 \itemize{
-\item \code{model = Combinatorics,parameter = character,value = logical}: find resource by name and set flag
+\item \code{model = Combinatorics,parameter = character,value = logical}: поиск показателя по наименованию и установка флага
+его использования в качестве целевого показателя.
 
-\item \code{model = Combinatorics,parameter = numeric,value = logical}: find resource by index and set flag
+\item \code{model = Combinatorics,parameter = numeric,value = logical}: поиск показателя по индексу в списке показателей и установка флага
+его использования в качестве целевого показателя.
 }}
 
 \examples{
@@ -41,6 +47,5 @@ Set target in model
   combinatorics.set.target (model, 'R1', TRUE)
 
   model <- combinatorics.example.Model3()
-  model <- combinatorics.set.target (model, 6, FALSE)
   combinatorics.set.target (model, 4, TRUE)
 }

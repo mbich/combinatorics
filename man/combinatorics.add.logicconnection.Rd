@@ -12,15 +12,16 @@ combinatorics.add.logicconnection(model, logicconnection)
   logicconnection)
 }
 \arguments{
-\item{model}{Combinatorics model}
+\item{model}{объект класса \code{"Combinatorics"}, содержащий комбинаторную модель}
 
-\item{logicconnection}{logicconnection value}
+\item{logicconnection}{объект класса \code{"character"}, содержащий логическую формулу,
+которой представленна логическая связь}
 }
 \value{
-Combinatroics model
+возвращает объект класса \code{"Combinatorics"} с внесёнными изменениями
 }
 \description{
-Add logicconnection in model.
+Добавляет логическую связь в логическую сеть комбинаторной модели.
 }
 \examples{
 
